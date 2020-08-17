@@ -66,7 +66,7 @@ class CustomButton extends Component {
 
 CustomButton.propTypes = {
     title: Proptypes.string.isRequired,
-    onPress: Proptypes.func
+    onPress: Proptypes.func.isRequired
 };
 
 export default CustomButton;

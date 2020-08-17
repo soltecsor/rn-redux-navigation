@@ -22,23 +22,16 @@ class DrawerComponent extends Component {
                         alignItems: 'center',
                         justifyContent: 'center'
                     }}>
-                    {/* <Image
-                        source={{ uri: 'http://i.pravatar.cc/300' }}
-                        style={{
-                            marginTop: 30,
-                            height: 120,
-                            width: 120,
-                            borderRadius: 60
-                        }} /> */}
+            
                     <Text>{this.props.state.authSession.email || 'desconhecido'}</Text>
                 </View>
                 <ScrollView>
                     <DrawerItems
                         {...this.props}
                         onItemPress={({ route, focused }) => {
-                            if (focused) { // If pressed on the current active route just close the drawer
+                            if (focused) {
                                 this.props.navigation.dispatch(DrawerActions.closeDrawer());
-                            } else { // Otherwise navigate to the route or screen on press
+                            } else {
                                 this.props.navigation.navigate(route.routeName);
                             }
                         }}
